@@ -1,0 +1,25 @@
+{
+  "name": "Book-Search-Engine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd /client && npm install && cd ../server && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allykatrocks/Book-Search-Engine.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allykatrocks/Book-Search-Engine/issues"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  },
+  "homepage": "https://github.com/allykatrocks/Book-Search-Engine#readme"
+}

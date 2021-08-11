@@ -2,6 +2,7 @@ const {User} = require("../models");
 const {signToken} = require("../utils/auth");
 const {AuthenticationError} = require('apollo-server-express');
 const { countDocuments } = require("../models/User");
+const {User, Book} = require('../models');
 
 const resolvers = {
     Query: {
@@ -14,11 +15,13 @@ const resolvers = {
     }
     },
     Mutation: {
-        createUser: async (parent, args) => {
-            // const user = await 
-        }
+        createUser: async (parent, {username, email, password}) => {
+            return User.create({username, email, password});
+        },
         // saveBook,
-        // deleteBook,
+        deleteBook: async (parent, {bookId}) => {
+            return Book.findOneAndDelete({_id: bookId});
+        }
         // login,
     }
 }
