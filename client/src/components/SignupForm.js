@@ -29,7 +29,10 @@ const SignupForm = () => {
     }
 
     try {
-      const response = await createUser({variables: {...userFormData}});
+      const response = await createUser({variables: {
+        username: userFormData.username,
+        email: userFormData.email,
+        password: userFormData.password}});
 
       if (!response.ok) {
         throw new Error('something went wrong!');
